@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1076866777824",
+    "project_id": "contact-trace-2025",
+    "storage_bucket": "contact-trace-2025.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076866777824:android:4f6557915da4241c14c685",
+        "android_client_info": {
+          "package_name": "com.example.contact_trace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4qkmqDics7vONCl20l2nDP1w7cowTzBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
