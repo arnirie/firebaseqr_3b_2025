@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:contact_trace/screens/login.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -107,6 +109,14 @@ class _RegisterClientScreenState extends State<RegisterClientScreen> {
               ),
               const Gap(16),
               ElevatedButton(onPressed: doRegister, child: Text('Register')),
+              const Gap(8),
+              TextButton(
+                onPressed:
+                    () => Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute(builder: (_) => LoginScreen())),
+                child: Text('Have an account? Login here.'),
+              ),
             ],
           ),
         ),
@@ -175,6 +185,22 @@ class _RegisterClientScreenState extends State<RegisterClientScreen> {
             password: passwordCtrl.text,
           );
       print(userCredential.user?.uid);
+
+      //store to firebase firestore
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userCredential.user!.uid)
+          .set({
+            'firstName': fnCtrl.text,
+            'lastName': lnCtrl.text,
+            'email': emailCtrl.text,
+          });
+      // await FirebaseFirestore.instance.collection('users').add({
+      //   'firstName': fnCtrl.text,
+      //   'lastName': lnCtrl.text,
+      //   'email': emailCtrl.text,
+      // });
+
       Navigator.of(context).pop();
       QuickAlert.show(
         context: context,

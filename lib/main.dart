@@ -13,7 +13,7 @@ class TraceApp extends StatelessWidget {
   const TraceApp({super.key});
 
   //CONTACT TRACING TODO:
-  //1) Register a) client b) establishment - Firebase Auth - just for the client
+  //1) Register a) client b) establishment - Firebase Auth - just for the client; Firebase Firestore storing account
   //2) Login - Firebase Auth
   //3) Scanning QR codes
   //4) Generate QR codes
